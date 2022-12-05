@@ -6,6 +6,19 @@ import {nanoid} from 'nanoid';
 export default function App() {
   
   const [dice, setDice] = React.useState(allNewDice)
+  const [tenzies, setTenzies] = React.useState(false)
+
+  React.useEffect(() => {
+    console.log("Dice State Changed")
+    for(let i = 1; i < 10; i++) {
+      if(!dice[i].isHeld || !dice[i-1].isHeld || dice[i].value !== dice[i-1].value) {
+        return;
+      }
+    }
+    setTenzies(true)
+    console.log("You Won")
+  }, [dice])
+
 
   function allNewDice() { 
     const arr = []
@@ -53,6 +66,9 @@ export default function App() {
   
   return (
     <main className='main'>
+    <h1 className="title">Tenzies</h1>
+    <p className="instructions">Roll until all dice are the same. 
+     Click each die to freeze it at its current value between rolls.</p>
       <div className='dice-container'>
         {diceElement}
       </div>
