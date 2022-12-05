@@ -2,11 +2,13 @@ import './App.css';
 import React from 'react';
 import Die from './components/Die';
 import {nanoid} from 'nanoid';
+import Confetti from 'react-confetti';
 
 export default function App() {
   
   const [dice, setDice] = React.useState(allNewDice)
   const [tenzies, setTenzies] = React.useState(false)
+  const btnText = tenzies ? "New Game" : "Roll"
 
   React.useEffect(() => {
     console.log("Dice State Changed")
@@ -19,6 +21,10 @@ export default function App() {
     console.log("You Won")
   }, [dice])
 
+  function newGame() {
+    setDice(allNewDice)
+    setTenzies(false)
+  }
 
   function allNewDice() { 
     const arr = []
@@ -72,7 +78,12 @@ export default function App() {
       <div className='dice-container'>
         {diceElement}
       </div>
-      <button className='roll-dice' onClick={rollDice}>Roll</button>
+      <button 
+        className='roll-dice' 
+        onClick={tenzies ? newGame : rollDice}>
+          {btnText}
+      </button>
+      {tenzies && <Confetti />}
     </main>
   );
 }
