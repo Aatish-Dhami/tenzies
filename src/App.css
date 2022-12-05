@@ -54,6 +54,10 @@ body {
    font-size: 2rem;
 }
 
+.die:hover {
+  color: #A9FFFA;
+}
+
 .roll-dice {
   width: 92.16px;
   height: 50.84px;
@@ -75,4 +79,8 @@ body {
 
 .roll-dice:active {
   box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
+}
+
+.roll-dice:hover {
+  background-color: #735EFF;
 }
