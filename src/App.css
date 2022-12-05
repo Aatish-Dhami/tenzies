@@ -19,10 +19,11 @@ body {
   max-width: 500px;
   padding: 20px;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   min-width: 360px;
-  gap: 25px;
+  /* gap: 25px; */
+
 }
 
 .dice-container {
@@ -40,16 +41,17 @@ body {
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  background-color: white;
+  /* background-color: white; */
 }
 
 .die--number {
    font-size: 2rem;
 }
 
-.roll-btn {
+.roll-dice {
   width: 92.16px;
   height: 40.84px;
+  border: none;
   background: #5035FF;
   box-shadow: 0px 3.2px 7.68px rgba(0, 0, 0, 0.18);
   border-radius: 3.81277px;
@@ -58,4 +60,13 @@ body {
   align-items: center;
   text-align: center;
   color: #FFFFFF;
+  cursor: pointer;
+}
+
+.roll-dice:focus {
+  outline: none;
+}
+
+.roll-dice:active {
+  box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
 }
