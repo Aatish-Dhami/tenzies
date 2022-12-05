@@ -21,6 +21,8 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-width: 360px;
+  gap: 25px;
 }
 
 .dice-container {
@@ -43,4 +45,17 @@ body {
 
 .die--number {
    font-size: 2rem;
+}
+
+.roll-btn {
+  width: 92.16px;
+  height: 40.84px;
+  background: #5035FF;
+  box-shadow: 0px 3.2px 7.68px rgba(0, 0, 0, 0.18);
+  border-radius: 3.81277px;
+  font-weight: 700;
+  font-size: 16.384px;
+  align-items: center;
+  text-align: center;
+  color: #FFFFFF;
 }
