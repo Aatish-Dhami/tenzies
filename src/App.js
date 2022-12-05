@@ -11,14 +11,12 @@ export default function App() {
   const btnText = tenzies ? "New Game" : "Roll"
 
   React.useEffect(() => {
-    console.log("Dice State Changed")
     for(let i = 1; i < 10; i++) {
       if(!dice[i].isHeld || !dice[i-1].isHeld || dice[i].value !== dice[i-1].value) {
         return;
       }
     }
     setTenzies(true)
-    console.log("You Won")
   }, [dice])
 
   function newGame() {
